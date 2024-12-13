@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Budget</title>
+    <link rel="stylesheet" href="budget.css" th:href="@{/css/budget.css}"/>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div id="navbar">
+        <div id="logo">SafeCryptoStocks</div>
+        <div id="menu">
+            <a th:href="@{/dashboard}" class="nav-link">Dashboard</a>
+            <a th:href="@{/market}" class="nav-link">Market</a>
+            <a th:href="@{/portfolio}" class="nav-link">Portfolio</a>
+            <a th:href="@{/budget}" class="nav-link">Budget</a>
+            <a th:href="@{/learn}" class="nav-link">Learn</a>
+        </div>
+        <div id="profile">
+            <img th:src="@{/image/profileicon.png}" alt="Profile Picture" width="40" height="40">
+            <div id="profile-info">
+                <span id="user-name" th:text="'Hello, ' + ${userName}">Hello, User</span>
+                <div id="view-profile">
+                    <a th:href="@{/profile}">View Profile</a>
+                </div>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="app">
+        <!-- Budget Section -->
+        <div id="budget-section">
+            <h1>Budgets</h1>
+            <br>
+            <button id="add-budget-btn">+ Add Budget</button>
+            <br>
+            <div id="budgets-list"></div>
+        </div>
+
+        <!-- Expense Section -->
+        <div id="expense-section" style="display: none;">
+            <h1>Expense History</h1>
+            <button id="back-to-budgets-btn">Back</button>
+            <button id="add-expense-btn">+ Add Expense</button>
+            <table id="expense-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Budget</th>
+                        <th>Date & Time</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-table-body">
+                    <!-- Rows will be dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Budget Modal -->
+    <div class="modal" id="budget-modal">
+        <h2>Add Budget</h2>
+        <input type="text" id="budget-name" placeholder="Budget Name" required>
+        <input type="text" id="budget-description" placeholder="Budget Description" required>
+        <input type="number" id="budget-amount" placeholder="Budget Amount" required>
+        <button id="save-budget-btn">Save</button>
+        <button type="button" id="close-budget-modal">Close</button>
+    </div>
+
+    <!-- Expense Modal -->
+    <div class="modal" id="expense-modal">
+        <h2>Add Expense</h2>
+        <input type="text" id="expense-name" placeholder="Expense Name" required>
+        <input type="number" id="expense-amount" placeholder="Expense Amount" required>
+        <button id="save-expense-btn">Save</button>
+        <button type="button" id="close-expense-modal">Close</button>
+    </div>
+
+    <!-- Backdrop -->
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+
+    <script th:src="@{/js/budget.js}"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <!-- Adding CSS file -->
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+<div id="parent">
+    <div id="child">
+        <h3><i class="fa-brands fa-servicestack"></i> &nbsp; SafeCryptoStocks</h3>
+        <h3>Sign In</h3>
+
+        <!-- Form will submit to the /loginUser endpoint -->
+        <form id="login-form" action="/loginUser" method="post">
+            <div>
+                <label for="email">
+                    <i class="fa-regular fa-envelope"></i> &nbsp;
+                </label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div>
+                <label for="password">
+                    <i class="fa-solid fa-lock"></i> &nbsp;
+                </label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <button id="button" type="submit">Login</button>
+            <div id="message"></div>
+            
+        </form>
+
+        <!-- OTP Section (will appear after login) -->
+        <div id="otp-section" style="display: none;">
+            <h3>Enter OTP</h3>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-key input-icon"></i>
+                <input id="otp" type="text" placeholder="Enter OTP" required>
+            </div>
+            <button id="verify-otp-button">Verify OTP</button>
+        </div>
+
+        <!-- Forgot Password Section (Initially Hidden) -->
+        <div id="forgot-password-form" style="display: none;">
+            <h3>Forgot Password</h3>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-envelope input-icon"></i>
+                <input id="forgot-email" type="email" placeholder="Enter your email" required>
+            </div>
+            <button id="forgot-password-submit">Send OTP</button>
+        </div>
+
+        <!-- OTP Verification for Forgot Password (Initially Hidden) -->
+        <div id="forgot-password-otp-section" style="display: none;">
+            <h3>Enter OTP</h3>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-key input-icon"></i>
+                <input id="forgot-password-otp" type="text" placeholder="Enter OTP" required>
+            </div>
+            <button id="forgot-password-verify-otp-button">Verify OTP</button>
+        </div>
+
+        <!-- Reset Password Section (Initially Hidden) -->
+        <div id="reset-password-section" style="display: none;">
+            <h3>Reset Password</h3>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-key input-icon"></i>
+                <input id="new-password" type="password" placeholder="Enter new password" required>
+            </div>
+            <button id="reset-password-submit">Reset Password</button>
+        </div>
+
+        <!-- Forgot Password Link -->
+        <a href="#" id="forgot-password">Forgot Password?</a>
+
+        <h3>Don't have an Account?
+            <a href="/signup"> Register</a>
+        </h3>
+    </div>
+</div>
+
+<!-- Adding JS file -->
+<script src="/js/login.js"></script>
+
+</body>
+</html>

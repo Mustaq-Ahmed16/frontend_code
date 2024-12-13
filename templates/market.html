@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARKET</title>
+    <link rel="stylesheet" href="market.css" th:href="@{/css/market.css}"/>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div id="navbar">
+        <div id="logo">SafeCryptoStocks</div>
+        <div id="menu">
+            <a th:href="@{/dashboard}">Dashboard</a>
+            <a th:href="@{/market}">Market</a>
+            <a th:href="@{/portfolio}">Portfolio</a>
+            <a th:href="@{/budget}">Budget</a>
+            <a th:href="@{/learn}">Learn</a>
+        </div>
+        <div id="profile">
+            <img th:src="@{/image/profileicon.png}" alt="Profile Picture" width="40" height="40">
+            <div id="profile-info">
+                <span id="user-name" th:text="'Hello, ' + ${userName}">Hello, User</span>
+                <div id="view-profile">
+                    <a th:href="@{/profile}">View Profile</a>
+                </div>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Top Cryptocurrencies by Market Cap</h1>
+        <div id="error-message" style="display: none; color: red;"></div> <!-- Error message container -->
+        <table id="crypto-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>24h%</th>
+                    <th>7d%</th>
+                    <th>Market Cap</th>
+                    <th>Volume (24h)</th>
+                    <th>Circulating Supply</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be dynamically inserted here -->
+            </tbody>
+        </table>
+		<div id="pagination-container" class="pagination-container">
+					       <!-- Pagination buttons will be dynamically inserted here -->
+					   </div>
+    </div>
+
+    <script th:src="@{/js/market.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for visual representation -->
+
+</body>
+</html>

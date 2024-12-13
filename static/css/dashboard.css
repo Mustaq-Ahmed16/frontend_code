@@ -1,0 +1,378 @@
+/* General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: white;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+#profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#profile img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+#profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#user-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#view-profile {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+#view-profile:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Logout Button */
+#logout-btn {
+    padding: 8px 15px;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#logout-btn:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+}
+
+.user {
+  display: flex;               
+  justify-content: center;     
+  align-items: center;                        
+  text-align: center;  
+  flex-direction: column; 
+  height: 120px;  
+  
+}
+
+.user h1 {
+	display:block;
+	color: blue;
+}
+
+.user h2{
+	color: blue;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+    display: flex;
+    justify-content: flex-start; /* Fix alignment issue */
+    gap: 15px;
+    margin: 10px;
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    max-width: 100%;
+}
+
+/* Left, Right and Center Containers */
+.left-container, .container, .right-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding doesn’t affect the width */
+    width: 100%; /* Ensure containers take up 100% of available space */
+    max-width: 100%;
+}
+
+.left-container {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 330px; /* Limit the width on larger screens */
+    margin-left: 10px;
+	flex-grow: 0;
+	flex-shrink:0;
+}
+
+.right-container {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 300px; /* Limit the width on larger screens */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+
+.container {
+    flex-grow: 1;
+    max-width: 650px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+}
+
+.price-up {
+    color: green;
+}
+
+.price-down {
+    color: red;
+}
+
+table td img {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.crypto-name-symbol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 8px; /* Add some spacing between the image and the text */
+}
+
+.crypto-name-symbol .crypto-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.crypto-name-symbol .crypto-symbol {
+    font-size: 12px;
+    color: gray;
+    margin-top: 2px;
+}
+
+/* Styling for the Trending Coins list */
+#trending-coins-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.coin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.coin-info {
+    display: flex;
+    align-items: center;
+}
+
+.coin-info img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.crypto-name-symbol {
+    display: flex;
+    flex-direction: column;
+}
+
+.crypto-name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.crypto-symbol {
+    font-size: 14px;
+    color: gray;
+}
+
+.market-rank {
+    font-size: 14px;
+    color: #007bff;
+}
+
+/* Styling for News Section */
+#crypto-news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Add space between news articles */
+    width: 100%; /* Ensure news list respects container width */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.news-article {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure it fits the container */
+    box-sizing: border-box; /* Include padding in width calculation */
+    overflow-wrap: break-word; /* Ensure long text breaks properly */
+    word-wrap: break-word; /* Fallback for older browsers */
+    max-width: 100%; /* Prevent articles from expanding beyond the container */
+}
+
+.news-article h3 {
+    font-size: 16px; /* Adjust size for better fit */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.news-article p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.news-article span {
+    font-size: 12px;
+    color: gray;
+    display: block;
+    margin-top: 8px;
+}
+
+.news-article a {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.news-article a:hover {
+    text-decoration: underline;
+}
+
+/* Ensure images don't cause horizontal overflow */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Pagination Styles */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.pagination-button {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pagination-button:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.1);
+}
+
+.pagination-button.active {
+    background-color: #007bff;
+    color: white;
+    cursor: default;
+}
+
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .dashboard-content {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .left-container, .container, .right-container {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 100%; /* Remove the max-width limitation */
+    }
+}
+

@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/image/pexels-rdne-7947709.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+#parent {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    height: 80vh; /* Fixed height, fits in the viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distribute content evenly */
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1, h2 {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    font-size: 1.5rem; /* Reduce font size for smaller displays */
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduced gap to save space */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    transition: background 0.3s;
+}
+
+.input-wrapper:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.input-icon {
+    color: #ddd;
+    font-size: 1.2rem;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    flex: 1;
+    padding: 8px; /* Reduced padding */
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    color: white;
+    font-size: 0.9rem; /* Slightly smaller font size */
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #007bff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#button {
+    width: 100%;
+    padding: 10px; /* Slightly reduced padding */
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 20px; /* Reduced radius for a sleeker look */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+a {
+    text-decoration: none;
+    color: #00bfff;
+    font-weight: bold;
+    font-size: 0.9rem; /* Slightly smaller text */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0099cc;
+}
+
+.success-message, .error-message {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem; /* Smaller size to fit better */
+    margin-top: 10px; /* Reduced spacing */
+}
+
+.success-message {
+    color: #28a745;
+    animation: slideIn 0.5s ease-out;
+}
+
+.error-message {
+    color: #dc3545;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #parent {
+        height: 85vh; /* Adjusted height for smaller devices */
+        padding: 15px; /* Reduce padding */
+    }
+
+    h1, h2 {
+        font-size: 1.3rem; /* Further size reduction */
+    }
+
+    #button {
+        padding: 8px; /* Smaller button padding */
+    }
+}

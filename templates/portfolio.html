@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="portfolio.css" th:href="@{/css/portfolio.css}"/>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="logo">
+            <h1>SafeCryptoStocks</h1>
+        </div>
+        <nav class="navigation">
+            <a th:href="@{/dashboard}">Dashboard</a>
+            <a th:href="@{/market}">Market</a>
+            <a th:href="@{/portfolio}">Portfolio</a>
+            <a th:href="@{/budget}">Budget</a>
+            <a th:href="@{/learn}">Learn</a>
+        </nav>
+        <div class="profile">
+            <img th:src="@{/image/profileicon.png}" alt="Profile Picture" width="40" height="40">
+            <div id="profile-info">
+                <span id="user-name" th:text="'Hello, ' + ${userName}">Hello, User</span>
+                <a class="btn profile-btn" th:href="@{/profile}">View Profile</a>
+                <button id="logout-btn" class="btn logout-btn">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="portfolio">
+            <div class="portfolio-header">
+                <h2>My Portfolios</h2>
+                
+            <button class="btn add-portfolio" 
+        th:onclick="'window.location.href=\'/create-portfolio/' + ${userId} + '\';'">+</button>
+            
+            
+            </div>
+            <ul id="portfolio-list">
+                <!-- Portfolio details will be injected here -->
+            </ul>
+        </section>
+
+        <section class="portfolio-details">
+            <div class="balance">
+                <h3>Current Balance</h3>
+                <p id="current-balance" class="balance-amount">₹0.00</p>
+                <p id="profit-loss" class="balance-profit">+₹0.00</p>
+            </div>
+            <button class="btn buy-stocks" onclick="window.location.href='/dummy-stock'">BUY STOCKS</button>
+            
+            <!-- button class="btn buy-stocks">BUY STOCKS</button-->
+            <table class="assets-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>24h%</th>
+                        <th>Holdings</th>
+                        <th>Avg. Buy Price</th>
+                        <th>Profit/Loss</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="assets-table-body">
+                    <!-- Stock rows will be injected here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script th:src="@{/js/portfolio.js}"></script>
+</body>
+</html>

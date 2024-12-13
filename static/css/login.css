@@ -1,0 +1,120 @@
+body { 
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/image/pexels-rdne-7947709.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Ensure text is readable on image */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; /* Align the container perfectly */
+    backdrop-filter: blur(10px); /* Add blur effect to the background */
+}
+
+#child {
+    background-color: rgba(255, 255, 255, 0.85); /* Transparent white */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Subtle blur for a glass effect */
+}
+
+h3 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+button {
+    width: 85%;
+    padding: 12px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+a {
+    color: #2575fc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #6a11cb;
+}
+
+/* Additional styles for better responsiveness */
+@media (max-width: 768px) {
+    #child {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    input, button {
+        width: 100%;
+    }
+}
+
+
+#message {
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#message.success {
+    color: green;
+    background-color: #e6ffe6; /* Light green background */
+    border: 1px solid #008000; /* Green border */
+}
+
+#message.error {
+    color: red;
+    background-color: #ffe6e6; /* Light red background */
+    border: 1px solid #ff0000; /* Red border */
+}
+
